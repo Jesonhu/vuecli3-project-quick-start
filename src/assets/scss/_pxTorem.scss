@@ -1,0 +1,3 @@
+@function pxTorem($px){
+  @return $px / 640px * 10;
+}
