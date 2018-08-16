@@ -28,3 +28,6 @@ npm run lint
 + vue-awesome-swiper
 + scss
 + cTools
+
+### 参考资料
++ [vue-common-components](https://github.com/Jesonhu/vue-common-components)
