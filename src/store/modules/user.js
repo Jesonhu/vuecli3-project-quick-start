@@ -1,4 +1,4 @@
-import cTools from '../../util/cTools';
+import cTools from '../../utils/cTools';
 /* 本地存储功能 */
 const { localStorage } = cTools.Win;
 
