@@ -1,19 +1,10 @@
-/**
- * Axios--Ajax请求控制[A0004]
- */
-import host from '../config/host';
 import Vue from 'vue';
-import request from '@/config/request'
+import request from '@/utils/request';
 
 const api = {
   /** 获取banner */
   getBanner(params = {id: 13}) {
     return request.get('/getBanner', params);
-  },
-
-  /** 楼层分类 */
-  getFloorType() {
-    return request.get('/floor');
   },
 
   /** 店铺列表 */
@@ -26,9 +17,9 @@ const api = {
     return request.get('/shopDetail', params);
   },
 
-  /** 店铺搜索 */
-  shopSearch(params) {
-    return request.post('/search', params);
+  getStaticShopDetail(params) {
+    const url = `/menuid/${params.id}/shopStaticDetai.html`;
+    return request.get(url);
   }
 }
 

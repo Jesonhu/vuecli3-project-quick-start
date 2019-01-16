@@ -1,6 +1,6 @@
 <template>
   <div class="p-test">
-    <v-validate></v-validate>
+    <v-validate @validateStatus="onValidateStatus"></v-validate>
   </div>
 </template>
 
@@ -14,6 +14,11 @@
     },
     components: {
       vValidate: validate
+    },
+    methods: {
+      onValidateStatus(status) {
+        console.log('验证结果');
+      }
     }
   }
 </script>

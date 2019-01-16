@@ -35,7 +35,8 @@ export default {
           console.log("验证通过", this.formData);
           return;
         }
-        console.log("没通过验证");
+        // console.log("没通过验证");
+        this.$emit('validateStatus', false, result);
       });
     },
     showToastTime() {

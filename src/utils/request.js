@@ -1,14 +1,18 @@
+//============================================
+// axios 请求方式封装(Get Post).
+//
+// @update 2019/01/16
+// @Jesonhu(github)
+// @email jesonhu_web@163.com
+//============================================
+
 import axios from 'axios';
-import host from './host';
-import { Toast } from 'cube-ui';
-import { toast } from './index';
+// Tips: 由于使用了默认导出，这里改了名字
+import CONFIG from '../config';
 import qs from 'qs';
 
-const service = axios.create({
-  // baseURL: host.baseUrl,
-  baseURL: 'https://www.baidu.com/api',
-  timeout: 10000
-});
+const config = CONFIG.axios;
+const service = axios.create(config);
 
 // request interceptor
 service.interceptors.request.use(
@@ -29,24 +33,24 @@ service.interceptors.response.use(
 // 封装了两种方式的请求 `get` `post`
 // also can named createAPI
 const request = {
-  // Notice: post 应该使用
-  // data: data
-  // params: data 会将参数添加到url中
+  // Notice: 
+  // post 应该使用 data: data
+  // get  使用 params: data 会将参数添加到url中
   post(url, data) {
     return service({
       method: 'post',
-      url,
-      data: data
+      data: data,
+      url
     });
   },
 
-  get(url, data) {
+  get(url, data = {}) {
     return service({
       method: 'get',
-      url,
-      params: data
+      params: data,
+      url
     })
-  }
+  },
 }
 
 
