@@ -1,5 +1,7 @@
 # vuecli3-project-quick-start
 
+>`quick-start` 的意思是: 安装了必要的依赖，UI库，文件目录结构优化。但是不会包含组件，毕竟不同的项目需要的组件不一致。会一直保持与 `Vue 全家桶` 版本的同步更新.
+
 ## Project setup
 ```
 npm install
@@ -19,6 +21,8 @@ npm run build
 ```
 npm run lint
 ```
+
+
 
 ### 已安装模块
 + axios
